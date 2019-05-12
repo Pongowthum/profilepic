@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
 	$con=mysqli_connect("localhost","root","","profilepicdemo");
 	if(!empty($filename)){
 		move_uploaded_file($_FILES["profilepic"]["tmp_name"],"pic/$username.jpeg");
-			$insert_user="insert into profile (username,password,profile) values('$username','$password','$filename')";
+			$insert_user="insert into profile (username,password,path) values('$username','$password','pic/$username.jpeg')";
 			$query=mysqli_query($con,$insert_user);				
 	echo "<script>alert('Registration success,Redirect to login page?')</script>";
 	echo "<script>window.open('loginpic.php','_self')</script>";
